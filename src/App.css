@@ -3196,13 +3196,45 @@ body.no-scroll {
 
   .quote-body {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 2%;
+    gap: 25px;
+    padding: 0 4%;
   }
 
   .quote-contact-card {
     margin-top: 40px;
     width: 100%;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .quote-contact-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .quote-contact-btn {
+    height: 48px;
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .quote-field {
+    gap: 6px;
+  }
+
+  .quote-field label {
+    font-size: 13px;
+  }
+
+  .quote-field input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+
+  .quote-submit-btn {
+    height: 48px;
+    font-size: 16px;
+    margin-top: 10px;
   }
 
   .row-addresses-unified,
