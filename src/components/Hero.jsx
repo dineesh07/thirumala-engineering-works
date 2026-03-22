@@ -34,7 +34,9 @@ const Hero = () => {
         Thirumala Engineering Works is a trusted OEM partner, delivering forged and precision-machined components with end-to-end engineering solutions for industrial brands, all under one roof.
       </p>
       
-      <a href="#capabilities" className="hero-cta" onClick={handleExploreClick}>Explore Capabilities</a>
+      <div className="hero-cta-wrapper">
+        <a href="#capabilities" className="hero-cta" onClick={handleExploreClick}>Explore Capabilities</a>
+      </div>
       
       <div className="hero-visual-container">
         {/* The glow effect sits in the hero container but will visually underlap About Us */}

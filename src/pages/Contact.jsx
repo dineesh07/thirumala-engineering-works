@@ -42,7 +42,11 @@ const Contact = () => {
             <textarea placeholder="Enter any additional details, special requirements, or questions for our team..."></textarea>
           </div>
           <span className="contact-note">You'll receive a response in your inbox instantly.</span>
-          <button type="submit" className="contact-submit-btn">Send Your Queries</button>
+          <div className="contact-submit-wrapper">
+            <div className="btn-glass-wrapper">
+              <button type="submit" className="contact-submit-btn">Send Your Queries</button>
+            </div>
+          </div>
         </form>
       </div>
 
@@ -122,25 +126,25 @@ const Contact = () => {
             {/* Social Media Bar moved here */}
             <div className="social-container-unified">
               <div className="social-expand-row">
-                <div className="social-expand-item">
+                <div className="social-expand-item linkedin">
                   <div className="social-icon-box-unified">
                     <img src={iconLinkedin} alt="LinkedIn" />
                   </div>
                   <span className="social-name">LinkedIn</span>
                 </div>
-                <div className="social-expand-item">
+                <div className="social-expand-item whatsapp">
                   <div className="social-icon-box-unified">
                     <img src={iconWhatsapp} alt="WhatsApp" />
                   </div>
                   <span className="social-name">WhatsApp</span>
                 </div>
-                <div className="social-expand-item">
+                <div className="social-expand-item instagram">
                   <div className="social-icon-box-unified">
                     <img src={iconInstagram} alt="Instagram" />
                   </div>
                   <span className="social-name">Instagram</span>
                 </div>
-                <div className="social-expand-item">
+                <div className="social-expand-item youtube">
                   <div className="social-icon-box-unified">
                     <img src={iconYoutube} alt="YouTube" />
                   </div>
@@ -153,7 +157,9 @@ const Contact = () => {
           <div className="contact-card quote-request-card-unified">
             <h3>Request<br/>Manufacturing Quote</h3>
             <p className="quote-sub">Takes only a few minutes to submit.</p>
-            <button className="contact-submit-btn-unified">Get Your Quotation</button>
+            <div className="btn-glass-wrapper unified-btn-wrapper">
+              <button className="contact-submit-btn-unified">Get Your Quotation</button>
+            </div>
           </div>
         </div>
 

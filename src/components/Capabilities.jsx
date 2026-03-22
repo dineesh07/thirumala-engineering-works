@@ -50,12 +50,14 @@ const Capabilities = () => {
             <div className="capability-overlay">
               <div className="capability-content">
                 <h3>{cap.title}</h3>
-                <div className="cap-desc-container">
-                  <div className="cap-desc-text">
-                    {cap.fullDesc.map((para, i) => <p key={i}>{para}</p>)}
-                  </div>
-                  <span className="read-more">Read more...</span>
+            <div className="cap-desc-container">
+                <p className="cap-short-text">
+                  {cap.shortDesc}<span className="read-more"> Read more...</span>
+                </p>
+                <div className="cap-full-text">
+                  {cap.fullDesc.map((para, i) => <p key={i}>{para}</p>)}
                 </div>
+              </div>
               </div>
               <button className="capability-btn">View Details</button>
             </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -26,7 +27,25 @@ const services = [
 
 const QuoteSection = () => {
   const [selected, setSelected] = useState('forging');
+  const [formState, setFormState] = useState('idle'); // 'idle' | 'loading' | 'success'
   const active = services.find(s => s.id === selected);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formState === 'loading' || formState === 'success') return;
+    
+    setFormState('loading');
+    
+    // Simulate API call and success sequence
+    setTimeout(() => {
+      setFormState('success');
+      
+      // Reset back to idle after 3 seconds
+      setTimeout(() => {
+        setFormState('idle');
+      }, 3000);
+    }, 2000); // 2 seconds of loading bouncy dots
+  };
 
   return (
     <section className="quote-section" id="quote-section">
@@ -69,12 +88,12 @@ const QuoteSection = () => {
 
           <div className="quote-contact-card">
             <p className="quote-contact-text">"Have questions before submitting? Talk to our engineering team"</p>
-            <button className="quote-contact-btn">Contact Us</button>
+            <Link to="/contact" className="quote-contact-btn">Contact Us</Link>
           </div>
         </div>
 
         {/* Right — form */}
-        <form className="quote-form" onSubmit={e => e.preventDefault()}>
+        <form className="quote-form" onSubmit={handleSubmit}>
           <div className="quote-field">
             <label>Company Name</label>
             <input type="text" placeholder="e.g., ABC Engineering Pvt. Ltd." />
@@ -95,7 +114,15 @@ const QuoteSection = () => {
             <label>Enter City / State / Country</label>
             <input type="text" placeholder="e.g., Chennai, Tamil Nadu, India" />
           </div>
-          <button type="submit" className="quote-submit-btn">Get Your Quotation Now</button>
+          <button type="submit" className={`quote-submit-btn ${formState}`} disabled={formState !== 'idle'}>
+            {formState === 'idle' && "Get Your Quotation Now"}
+            {formState === 'loading' && (
+              <div className="loading-dots">
+                <span></span><span></span><span></span>
+              </div>
+            )}
+            {formState === 'success' && "Check Your Inbox Now"}
+          </button>
         </form>
       </div>
     </section>
