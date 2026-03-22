@@ -816,7 +816,8 @@ body.no-scroll {
   background: white;
   overflow: hidden;
   position: relative;
-  z-index: 5;
+  z-index: 20;
+  box-shadow: 0 -3px 0 0 #ffffff, 0 3px 0 0 #ffffff; /* Definitively overlaps subpixel rendering gaps */
 }
 
 .carousel-track-container {
@@ -1169,7 +1170,7 @@ body.no-scroll {
    ======================== */
 .testimonials-section {
   width: 100%;
-  padding: 60px 0 80px 0;
+  padding: 61px 0 81px 0;
   background: #ffffff;
   overflow: hidden;
   display: flex;
@@ -1178,6 +1179,9 @@ body.no-scroll {
   gap: 48px;
   position: relative;
   z-index: 5;
+  margin-top: -1px; /* Fix subpixel background bleed */
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .testimonials-section .section-header {
@@ -2178,21 +2182,21 @@ body.no-scroll {
 }
 
 .navbar-light .nav-links {
-  background: #f3f3f3;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(18, 6, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: none;
 }
 
 .navbar-light .nav-link {
-  color: #444;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .navbar-light .nav-link:hover {
-  color: #111;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .navbar-light .nav-link.active {
-  color: #111;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* Logo: keep dark background clean on light navbar */
@@ -2201,9 +2205,15 @@ body.no-scroll {
 }
 
 /* Contact Us button: clean on light navbar */
+.navbar-light .contact-btn-wrapper,
+.navbar-light .mobile-contact-container .btn-glass-wrapper {
+  background: rgba(18, 6, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .navbar-light .contact-btn {
   border: none;
-  box-shadow: 0 2px 12px rgba(255, 82, 0, 0.25);
+  box-shadow: inset 0px -11px 16px rgba(255, 243, 237, 0.3);
 }
 
 /* ============================================================
@@ -2297,25 +2307,23 @@ body.no-scroll {
 }
 
 .contact-submit-btn {
-  width: 100%;
-  height: 100%;
-  background: #FE5200;
+  background: linear-gradient(#FE5200, #FE5200) padding-box,
+    linear-gradient(180deg, #FFA880 0%, #FE5200 100%) border-box;
+  border: 1px solid transparent;
+  border-radius: 16px;
   color: #FFFFFF;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: 16px;
-  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 18px;
-  border: 1px solid transparent;
-  background: linear-gradient(#FE5200, #FE5200) padding-box,
-    linear-gradient(180deg, #FFA880 0%, #FE5200 100%) border-box;
+  padding: 14px 24px;
+  text-decoration: none;
+  cursor: pointer;
   box-shadow: 0px -11px 16px 0px rgba(255, 243, 237, 0.3) inset, 0px 4px 16px 0px rgba(255, 94, 0, 0.5);
   transition: all 0.5s ease;
-  cursor: pointer;
+  white-space: nowrap;
 }
 
 .contact-submit-btn:hover {
@@ -2777,25 +2785,23 @@ body.no-scroll {
 }
 
 .contact-submit-btn-unified {
-  width: 100%;
-  height: 100%;
-  background: #FE5200;
+  background: linear-gradient(#FE5200, #FE5200) padding-box,
+    linear-gradient(180deg, #FFA880 0%, #FE5200 100%) border-box;
+  border: 1px solid transparent;
+  border-radius: 16px;
   color: #FFFFFF;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: 16px;
-  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 18px;
-  border: 1px solid transparent;
-  background: linear-gradient(#FE5200, #FE5200) padding-box,
-    linear-gradient(180deg, #FFA880 0%, #FE5200 100%) border-box;
+  padding: 14px 24px;
+  text-decoration: none;
+  cursor: pointer;
   box-shadow: 0px -11px 16px 0px rgba(255, 243, 237, 0.3) inset, 0px 4px 16px 0px rgba(255, 94, 0, 0.5);
   transition: all 0.5s ease;
-  cursor: pointer;
+  white-space: nowrap;
 }
 
 .contact-submit-btn-unified:hover {
@@ -3235,6 +3241,27 @@ body.no-scroll {
     height: 48px;
     font-size: 16px;
     margin-top: 10px;
+  }
+
+  .quote-section {
+    padding: 60px 4%;
+  }
+
+  .quote-selector-title {
+    font-size: 18px;
+  }
+
+  .quote-tabs {
+    gap: 16px;
+  }
+
+  .quote-info-title {
+    font-size: 28px;
+  }
+
+  .quote-form {
+    padding: 24px 20px;
+    gap: 16px;
   }
 
   .row-addresses-unified,

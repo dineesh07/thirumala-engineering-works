@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import mapImg from '../assets/map-location.jpg';
 import iconFactory from '../assets/icon-factory.png';
 import iconOffice from '../assets/icon-office.png';
@@ -10,6 +10,10 @@ import iconInstagram from '../assets/social medias/Footer Social Media (Instagra
 import iconWhatsapp from '../assets/social medias/ic_baseline-whatsapp.png';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="contact-page">
       <div className="contact-header">
