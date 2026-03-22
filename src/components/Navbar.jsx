@@ -53,7 +53,12 @@ const Navbar = () => {
         </div>
         
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/" className={`nav-link ${!isContact ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>Home</Link>
+          {/* Mobile Close Button */}
+          <div className="nav-close" onClick={() => setIsMenuOpen(false)}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </div>
+          
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>HOME</Link>
           <a href="/#capabilities" className="nav-link" onClick={e => handleNavClick(e, 'capabilities')}>Capabilities</a>
           <a href="/#about" className="nav-link" onClick={e => handleNavClick(e, 'about')}>About us</a>
           <a href="/#facilities" className="nav-link" onClick={e => handleNavClick(e, 'facilities')}>Facilities</a>

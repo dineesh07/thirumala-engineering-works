@@ -125,6 +125,10 @@ body.no-scroll {
   transform: translateX(-50%);
 }
 
+.nav-close {
+  display: none;
+}
+
 .nav-link {
   font-family: 'Bebas Neue', sans-serif;
   color: rgba(255, 255, 255, 0.3);
@@ -461,10 +465,12 @@ body.no-scroll {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 128px;
-  width: 1051px;
-  max-width: 100%;
-  height: 160px;
+  flex-wrap: wrap;
+  gap: 30px 100px;
+  width: 100%;
+  max-width: 1051px;
+  min-height: 160px;
+  height: auto;
   box-sizing: border-box;
   background: linear-gradient(180deg, #FFE7D9 0%, #FFFFFF 100%);
   border-top: 1px solid rgba(254, 82, 0, 0.3);
@@ -472,7 +478,7 @@ body.no-scroll {
   border-right: 1px solid rgba(254, 82, 0, 0.3);
   border-bottom: none;
   border-radius: 20px 20px 0 0;
-  padding: 0 40px;
+  padding: 30px 40px;
   margin-bottom: 80px;
   margin-left: auto;
   margin-right: auto;
@@ -482,7 +488,8 @@ body.no-scroll {
 .stat-item {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: clamp(12px, 2vw, 24px);
+  flex-shrink: 0;
 }
 
 .stat-icon-wrapper {
@@ -671,8 +678,8 @@ body.no-scroll {
 }
 
 .about-main-img {
-  width: 450px;
-  height: 448px;
+  width: 100%;
+  height: 100%;
   border-radius: 24px;
   object-fit: cover;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -2954,6 +2961,25 @@ body.no-scroll {
     pointer-events: none;
   }
 
+  .nav-close {
+    display: flex; /* Show on mobile */
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .nav-close:hover {
+    transform: rotate(90deg);
+    color: #FE5200;
+  }
+
   .nav-links.active {
     right: 0;
     visibility: visible;
@@ -3035,13 +3061,30 @@ body.no-scroll {
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
+  }
+
+  .about-left {
+    width: 100%;
+    order: 2;
+  }
+
+  .about-right {
+    width: 100%;
+    order: 1;
   }
 
   .about-image-wrapper {
     margin: 0 auto;
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
+    height: auto;
+  }
+
+  .about-main-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
   }
 
   /* Contact Page Stacking */
@@ -3072,6 +3115,10 @@ body.no-scroll {
     line-height: 1.3;
   }
 
+  .floating-frame {
+    display: none !important;
+  }
+
   .oem-icon {
     width: 26px;
     height: 26px;
@@ -3097,9 +3144,18 @@ body.no-scroll {
   }
 
   .about-section {
-    padding: 40px 5% 60px;
+    padding: 40px 7% 60px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+    overflow: hidden;
+  }
+
+  .about-description {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-size: 15px;
   }
 
   .about-title {
@@ -3134,13 +3190,14 @@ body.no-scroll {
   }
 
   .contact-header {
-    padding: 120px 5% 40px;
+    padding: 60px 7% 30px;
     text-align: center;
   }
 
   .quote-body {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
+    padding: 0 2%;
   }
 
   .quote-contact-card {
@@ -3151,6 +3208,7 @@ body.no-scroll {
   .row-addresses-unified,
   .methods-row-unified {
     flex-direction: column;
+    gap: 20px;
   }
 
   .quote-micro-card-unified {
