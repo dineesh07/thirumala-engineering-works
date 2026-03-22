@@ -2697,3 +2697,246 @@ body {
 .contact-details-main, .contact-methods-section, .contact-row.row-bottom, .methods-left-column, .row-mail-phone, .social-media-card-new, .quote-request-card-new, .quote-block-new {
   display: none !important;
 }
+
+/* ============================================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================================ */
+
+/* ---- TABLET / SMALL DESKTOP (1024px) ---- */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 1.5rem 5%;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #0a0a0a;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 100px 30px;
+    border-radius: 0;
+    border-left: 1px solid rgba(254, 82, 0, 0.2);
+    transition: right 0.4s ease;
+    z-index: 99;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+    gap: 25px;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 101;
+  }
+
+  .hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-contact-container {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mobile-contact-container .contact-btn {
+    width: 100%;
+    height: 54px;
+    border-radius: 12px;
+  }
+
+  .hero-title {
+    font-size: 38px;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .about-image-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  /* Contact Page Stacking */
+  .unified-top-row, .unified-bottom-row {
+    flex-direction: column;
+  }
+
+  .map-section-unified, .bottom-left-column {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  
+  .map-section-unified {
+    min-height: 300px;
+  }
+}
+
+/* ---- MOBILE / TABLET (768px) ---- */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 140px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
+  .stats-bar {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 30px;
+  }
+
+  .stat-item {
+    gap: 15px;
+  }
+
+  .stat-text h3 {
+    font-size: 28px;
+  }
+
+  .about-section {
+    padding: 40px 5% 60px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+  }
+
+  .about-title {
+    font-size: 34px;
+  }
+
+  .capability-card {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+  }
+
+  .testimonials-columns {
+    flex-direction: column;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .scroll-up, .scroll-down {
+    animation: none;
+    transform: none;
+  }
+
+  .quote-body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .quote-contact-card {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .row-addresses-unified, .methods-row-unified {
+    flex-direction: column;
+  }
+
+  .quote-micro-card-unified {
+    height: auto;
+    padding: 24px 30px;
+  }
+
+  .method-card-unified {
+    height: auto;
+    min-height: 120px;
+  }
+
+  .social-expand-row {
+    gap: 15px;
+  }
+
+  .social-expand-item {
+    width: 54px;
+    height: 54px;
+    padding: 0 10px;
+  }
+  
+  .social-icon-box-unified {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social-expand-item:hover {
+    width: 54px; /* Disable expansion on mobile for better ux */
+  }
+  
+  .social-name {
+    display: none;
+  }
+}
+
+/* ---- SMALL MOBILE (480px) ---- */
+@media screen and (max-width: 480px) {
+  .stats-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .hero-visual-container {
+    margin-top: 0;
+  }
+
+  .about-links {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .contact-title {
+    font-size: 28px;
+  }
+  
+  .address-card-new {
+    padding: 30px 20px;
+  }
+}
