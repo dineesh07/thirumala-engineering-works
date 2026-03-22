@@ -2383,6 +2383,12 @@ body.no-scroll {
   backdrop-filter: blur(2px);
 }
 
+.map-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .map-overlay span {
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -3199,11 +3205,21 @@ body.no-scroll {
   }
 
   .map-section-unified {
-    min-height: 350px !important;
+    min-height: auto !important;
+    height: auto;
+  }
+
+  .contact-map-container-unified {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .contact-page {
+    padding: 20px 5% 60px;
   }
 
   .contact-header {
-    padding: 60px 7% 30px;
+    padding: 10px 0 20px;
     text-align: center;
   }
 
