@@ -2306,6 +2306,13 @@ body.no-scroll {
   text-align: center;
 }
 
+.contact-submit-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px; /* Slight breathing room below the note */
+}
+
 .contact-submit-btn {
   background: linear-gradient(#FE5200, #FE5200) padding-box,
     linear-gradient(180deg, #FFA880 0%, #FE5200 100%) border-box;
@@ -3201,16 +3208,23 @@ body.no-scroll {
   }
 
   .quote-body {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 25px;
     padding: 0 4%;
   }
 
+  .quote-info {
+    display: contents;
+  }
+
   .quote-contact-card {
-    margin-top: 40px;
+    display: flex;
+    order: 10;
+    margin-top: 10px;
     width: 100%;
-    padding: 20px 16px;
-    gap: 12px;
+    padding: 24px 20px;
+    gap: 16px;
   }
 
   .quote-contact-text {
@@ -3260,7 +3274,6 @@ body.no-scroll {
   }
 
   .quote-form {
-    padding: 24px 20px;
     gap: 16px;
   }
 
@@ -3302,6 +3315,21 @@ body.no-scroll {
 
   .social-name {
     display: none;
+  }
+
+  .faq-body {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .faq-info {
+    grid-row: 1;
+    position: relative;
+    top: 0;
+  }
+
+  .faq-list {
+    grid-row: 2;
   }
 }
 
