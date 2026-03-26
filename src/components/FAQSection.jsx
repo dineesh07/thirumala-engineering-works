@@ -71,7 +71,10 @@ const FAQSection = () => {
             >
               <div className="faq-header">
                 <span className="faq-question">{item.q}</span>
-                <span className="faq-icon">{openIndex === i ? '—' : '+'}</span>
+                <div className="faq-icon-box">
+                  <div className="faq-icon-hline" />
+                  <div className="faq-icon-vline" />
+                </div>
               </div>
               <div className="faq-answer-wrap">
                 <p className="faq-answer">{item.a}</p>
@@ -81,16 +84,18 @@ const FAQSection = () => {
         </div>
 
         {/* Right — static info */}
-        <div className="faq-info">
-          <div className="section-badge faq-badge">
-            <span className="dot"></span> FAQ's
+        <div className="faq-info-wrapper">
+          <div className="faq-info">
+            <div className="section-badge faq-badge">
+              <span className="dot"></span> FAQ's
+            </div>
+            <h2 className="faq-title">Answers You Can Trust</h2>
+            <p className="faq-desc">
+              Clear answers to common questions about our OEM manufacturing capabilities,
+              end-to-end processes, quality assurance practices, and how we work as a
+              reliable manufacturing partner for industrial businesses.
+            </p>
           </div>
-          <h2 className="faq-title">Answers You Can Trust</h2>
-          <p className="faq-desc">
-            Clear answers to common questions about our OEM manufacturing capabilities,
-            end-to-end processes, quality assurance practices, and how we work as a
-            reliable manufacturing partner for industrial businesses.
-          </p>
         </div>
 
       </div>

@@ -65,7 +65,7 @@ const Navbar = () => {
           
           {/* Contact button moved inside nav-links for mobile */}
           <div className="mobile-contact-container">
-            <div className="btn-glass-wrapper">
+            <div className="contact-btn-wrapper">
               <Link to="/contact" className={`contact-btn ${isContact ? 'contact-active' : ''}`} onClick={() => setIsMenuOpen(false)}>Contact Us</Link>
             </div>
           </div>

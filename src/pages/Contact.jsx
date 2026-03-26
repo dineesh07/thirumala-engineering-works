@@ -47,7 +47,7 @@ const Contact = () => {
           </div>
           <span className="contact-note">You'll receive a response in your inbox instantly.</span>
           <div className="contact-submit-wrapper">
-            <div className="btn-glass-wrapper">
+            <div className="contact-submit-btn-wrapper">
               <button type="submit" className="contact-submit-btn">Send Your Queries</button>
             </div>
           </div>
@@ -71,6 +71,7 @@ const Contact = () => {
           <div className="addresses-section-unified">
             <div className="row-addresses-unified">
               <div className="contact-card address-card-new">
+                <div className="hover-ellipse"></div>
                 <div className="icon-box-new">
                   <div className="icon-overlay-corners"></div>
                   <img src={iconOffice} alt="Office Icon" className="card-icon-img" />
@@ -81,6 +82,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="contact-card address-card-new">
+                <div className="hover-ellipse"></div>
                 <div className="icon-box-new">
                   <div className="icon-overlay-corners"></div>
                   <img src={iconFactory} alt="Factory Icon" className="card-icon-img" />
@@ -105,6 +107,7 @@ const Contact = () => {
           <div className="bottom-left-column">
             <div className="methods-row-unified">
               <div className="contact-card method-card-unified">
+                <div className="hover-ellipse"></div>
                 <div className="icon-box-new method-icon-box">
                   <div className="icon-overlay-corners"></div>
                   <img src={iconMailNew} alt="Mail Icon" className="card-icon-img" />
@@ -116,6 +119,7 @@ const Contact = () => {
               </div>
 
               <div className="contact-card method-card-unified">
+                <div className="hover-ellipse"></div>
                 <div className="icon-box-new method-icon-box">
                   <div className="icon-overlay-corners"></div>
                   <img src={iconPhoneNew} alt="Phone Icon" className="card-icon-img" />
@@ -161,7 +165,7 @@ const Contact = () => {
           <div className="contact-card quote-request-card-unified">
             <h3>Request<br/>Manufacturing Quote</h3>
             <p className="quote-sub">Takes only a few minutes to submit.</p>
-            <div className="btn-glass-wrapper unified-btn-wrapper">
+            <div className="contact-submit-btn-wrapper">
               <button className="contact-submit-btn-unified">Get Your Quotation</button>
             </div>
           </div>
