@@ -353,8 +353,8 @@ body.no-scroll {
 }
 
 .oem-icon {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   display: inline-block;
   background: url('/src/assets/o-bg.gif');
   background-size: cover;
@@ -362,12 +362,11 @@ body.no-scroll {
   background-repeat: no-repeat;
   padding: 0;
   border-radius: 50%;
-  border: 3px solid #ffffff;
+  border: 4px solid #ffffff;
   margin: 0;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   transition: all 0.4s ease-out;
   pointer-events: none;
-  aspect-ratio: 16 / 9;
 }
 
 .oem-icon-container:hover .oem-icon {
@@ -2077,8 +2076,8 @@ body.no-scroll {
 
 .footer-container {
   background-color: #0a0a0a;
-  background-position: center 10%;
-  /* Shifted the GIF down slightly */
+  background-position: center center;
+  /* Centered perfectly to make GIF visible */
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 36px;
@@ -2091,7 +2090,7 @@ body.no-scroll {
 .footer-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.95) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.60) 50%, rgba(0, 0, 0, 0.90) 100%);
   z-index: 1;
 }
 
@@ -2957,24 +2956,44 @@ body.no-scroll {
   position: relative;
 }
 
+.quote-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+}
+
+.quote-text-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+}
+
 .quote-mark-orange {
   color: #FF5E00;
-  font-size: 32px;
-  font-family: serif;
-  font-weight: 800;
-  line-height: 1;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 43.50px;
+  letter-spacing: 0.30px;
+  word-wrap: break-word;
 }
 
 .quote-start {
-  left: 20px;
+  align-self: flex-start;
 }
 
 .quote-end {
-  right: 20px;
+  align-self: flex-end;
+  transform: rotate(180deg);
 }
+
 
 .quote-micro-card p {
   font-family: 'Poppins', sans-serif;
@@ -3081,23 +3100,27 @@ body.no-scroll {
 
 .quote-micro-card-unified {
   width: 100%;
-  height: 80px;
-  background: #FFF3ED99;
+  height: auto;
+  min-height: 80px;
+  background: rgba(255, 243, 237, 0.60);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 50px;
+  padding: 24px 20px;
   position: relative;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .quote-micro-card-unified p {
+  color: rgba(46, 46, 46, 0.90);
+  font-size: 14px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #2E2E2EE5;
+  line-height: 20.30px;
+  letter-spacing: 0.14px;
+  word-wrap: break-word;
   text-align: center;
   margin: 0;
 }
@@ -3379,6 +3402,12 @@ body.no-scroll {
 
 /* ---- TABLET / SMALL DESKTOP (1024px) ---- */
 @media screen and (max-width: 1024px) {
+  .floating-frame,
+  .frame-left,
+  .frame-right {
+    display: none !important;
+  }
+
   .navbar {
     padding: 1.5rem 5%;
   }
@@ -3580,13 +3609,18 @@ body.no-scroll {
     line-height: 1.3;
   }
 
-  .floating-frame {
+  .floating-frame,
+  .frame-left,
+  .frame-right {
     display: none !important;
   }
 
-  .oem-icon {
-    width: 26px;
-    height: 26px;
+  .oem-icon,
+  .oem-icon-container:hover .oem-icon,
+  .oem-icon-container:active .oem-icon {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 50% !important;
     border-width: 2px;
   }
 
@@ -3737,6 +3771,23 @@ body.no-scroll {
 
   .quote-form {
     gap: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .quote-field {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .quote-field input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .quote-submit-btn {
+    width: 100%;
+    max-width: 100%;
   }
 
   .row-addresses-unified,
@@ -3748,6 +3799,16 @@ body.no-scroll {
   .quote-micro-card-unified {
     height: auto;
     padding: 24px 30px;
+  }
+
+  .quote-content-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: auto;
+    top: auto;
+    transform: none;
+    align-items: flex-start;
   }
 
   .method-card-unified {

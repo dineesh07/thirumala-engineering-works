@@ -95,9 +95,13 @@ const Contact = () => {
             </div>
             
             <div className="quote-micro-card-unified">
-              <span className="quote-mark-orange quote-start">“</span>
-              <p> Complete OEM manufacturing, engineered for reliability. Forged and machined components built to perform at scale. </p>
-              <span className="quote-mark-orange quote-end">”</span>
+              <div className="quote-content-wrapper">
+                <div className="quote-text-group">
+                  <span className="quote-mark-orange quote-start">“</span>
+                  <p> Complete OEM manufacturing, engineered for reliability.<br />Forged and machined components built to perform at scale. </p>
+                </div>
+                <span className="quote-mark-orange quote-end">“</span>
+              </div>
             </div>
           </div>
         </div>
